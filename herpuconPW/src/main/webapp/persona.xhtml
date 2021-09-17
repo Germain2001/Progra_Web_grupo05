@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Personas:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Registrar Persona</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="Cdni" value="Id"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="Cdni"
+				styleClass="form-control"
+				value="#{HerpuconEntiController.herpuconenti.Cdni}"
+				required="true" />
+			<h:outputLabel for="D_Nombre"
+				value="Nombre de Persona " styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="D_Nombre"
+				styleClass="form-control"
+				value="#{HerpuconEntiController.herpuconenti.D_Nombre}"
+				maxlength="50" required="true" />
+
+
+			<h:outputLabel for="D_Apellido" value="Apellido "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="D_Apellido"
+				styleClass="form-control"
+				value="#{HerpuconEntiController.herpuconenti.D_Apellido}"
+				maxlength="50" required="true">
+
+			</p:inputText>
+				<h:outputLabel for="N_Celular" value="Nro. de Celular"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="N_Celular"
+				styleClass="form-control"
+				value="#{HerpuconEntiController.herpuconenti.N_Celular}"
+				maxlength="30" required="true">
+
+			</p:inputText>
+				<h:outputLabel for="T_Email" value="Email "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="T_Email"
+				styleClass="form-control"
+				value="#{HerpuconEntiController.herpuconenti.T_Email}"
+				maxlength="50" required="true">
+
+			</p:inputText>
+				<h:outputLabel for="T_Direccion" value="Dirección "
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="T_Direccion"
+				styleClass="form-control"
+				value="#{HerpuconEntiController.herpuconenti.T_Direccion}"
+				maxlength="150" required="true">
+
+			</p:inputText>
+			<br />
+			<p:commandButton value="Grabar"
+				actionListener="#{HerpuconEntiController.insertar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listPersona?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listPersona?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
